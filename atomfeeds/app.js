@@ -2,7 +2,7 @@ const wrapper = document.querySelector(".content-wrapper");
 
 async function loadFeeds() {
     try {
-	const response = await fetch("./feeds/feeds.json");
+	const response = await fetch("./feeds.json");
 	const feeds = await response.json();
 
 	let contentBuffer = `<span class="heading">#feeds</span>`
