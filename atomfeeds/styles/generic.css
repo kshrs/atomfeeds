@@ -1,0 +1,189 @@
+/* Blog Content Scoping
+  Apply these to the generic tags inside your main article container.
+*/
+
+#blog, #about {
+    /* Typography: Headings */
+    h1, h2, h3, h4 {
+	font-family: "HermitBold", monospace;
+	color: #1d1d1f;
+	line-height: 1.2;
+	margin-top: 32px;
+	margin-bottom: 16px;
+    }
+
+    h1 { font-size: 32px; }
+    h2 { font-size: 24px; }
+    h3 { font-size: 20px; }
+
+    /* Typography: Body Text */
+    p {
+	font-family: "Roboto-Regular", sans-serif;
+	color: #52525b; /* Using the medium-dark grey to reduce eye strain */
+	font-size: 16px;
+	line-height: 1.6; /* 160% line height for readable prose */
+	margin-bottom: 24px;
+    }
+
+    /* Links */
+    a {
+	color: #1d1d1f;
+	font-family: "Roboto-SemiBold", sans-serif;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 4px;
+	transition: color 0.2s ease, text-decoration-color 0.2s ease;
+    }
+
+    a:hover {
+	color: #f37726; /* A sharp, recognizable accent color for interactive states */
+	text-decoration-color: #f37726;
+    }
+
+    /* Lists */
+    ul, ol {
+	font-family: "Roboto-Regular", sans-serif;
+	color: #52525b;
+	font-size: 16px;
+	line-height: 1.6;
+	margin-bottom: 24px;
+	padding-left: 24px;
+    }
+
+    li {
+	margin-bottom: 8px; /* 8-point grid for list spacing */
+    }
+
+    /* Inline Code & Code Blocks (The Technical Vibe) */
+    code {
+	font-family: "HermitRegular", monospace;
+	font-size: 14px;
+	background-color: #f5f5f7;
+	color: #1d1d1f;
+	padding: 2px 6px;
+	border-radius: 4px;
+	border: 1px solid rgba(0,0,0,0.04);
+    }
+
+    pre {
+	background-color: #f5f5f7;
+	padding: 16px;
+	border-radius: 8px;
+	border: 1px solid rgba(0,0,0,0.08); /* Matches your flat container style */
+	overflow-x: auto;
+	margin-top: 24px;
+	margin-bottom: 24px;
+    }
+
+    pre code {
+	background-color: transparent;
+	padding: 0;
+	border: none;
+	font-size: 14px;
+    }
+
+    /* Blockquotes for Emphasis */
+    blockquote {
+	border-left: 4px solid #1d1d1f;
+	padding-left: 16px;
+	margin: 24px 0;
+	font-style: italic;
+	color: #1d1d1f;
+	background-color: #f9f9fb; /* Extremely subtle highlight */
+	padding: 16px;
+	border-radius: 0 8px 8px 0;
+    }
+
+    blockquote p {
+	font-family: "HermitRegular", "monospace", sans-serif;
+	margin-bottom: 0;
+	color: #1d1d1f;
+    }
+
+    /* Images */
+    img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 8px; /* Matches the border radius of your cards */
+	border: 1px solid rgba(0,0,0,0.08); /* Keeps the crisp, flat UI aesthetic */
+	margin: 8px 0;
+    }
+
+    .image-tooltip-wrapper {
+	position: relative;
+	display: inline-block;
+	margin: 8px 0;
+    }
+
+    .image-tooltip-wrapper img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 8px;
+	border: 1px solid rgba(0,0,0,0.08);
+	margin: 0; /* Strip margin so the wrapper controls spacing */
+    }
+
+    /* The Tooltip UI */
+    .image-tooltip-wrapper::after {
+	content: attr(data-alt); /* Grabs the text from the HTML attribute */
+	position: absolute;
+	bottom: 16px;
+	left: 50%;
+	transform: translateX(-50%);
+	
+	/* Styling the tooltip to match your technical aesthetic */
+	background-color: rgba(29, 29, 31, 0.95); /* Nearly solid #1d1d1f */
+	color: #ffffff;
+	font-family: "HermitRegular", monospace; /* Using mono for technical tooltips looks great */
+	font-size: 12px;
+	padding: 8px 12px;
+	border-radius: 4px;
+	white-space: nowrap;
+	
+	/* Animation & Interaction */
+	opacity: 0;
+	pointer-events: none; /* Prevents the tooltip from flickering if the mouse hits it */
+	transition: opacity 0.2s ease, transform 0.2s ease;
+    }
+
+    /* Hover State */
+    .image-tooltip-wrapper:hover::after {
+	opacity: 1;
+	transform: translate(-50%, -4px); /* Slight upward float effect */
+    }
+    
+    /* Replace the previous img generic tag with this structure */
+    figure {
+	margin: 32px 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Centers the caption under the image */
+    }
+
+    figure img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 8px;
+	border: 1px solid rgba(0,0,0,0.08);
+	margin-bottom: 12px; /* 8-point grid spacing for the caption */
+    }
+
+    figcaption {
+	font-family: "Roboto-Regular", sans-serif;
+	color: #52525b; /* Using your medium-grey for secondary info */
+	font-size: 14px;
+	text-align: center;
+	max-width: 80%; /* Keeps long captions from stretching too wide */
+	line-height: 1.5;
+    }
+
+    /* Horizontal Rule (Separators) */
+    hr {
+	border: none;
+	border-top: 1px solid rgba(0,0,0,0.08);
+	margin: 32px 0;
+    }
+}

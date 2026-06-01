@@ -1,0 +1,318 @@
+@font-face {
+    font-family: "HermitRegular";
+    src: url("../fonts/Hermit-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "HermitBold";
+    src: url("../fonts/Hermit-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto-SemiBold";
+    src: url("../fonts/Roboto/Roboto-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Roboto-Regular";
+    src: url("../fonts/Roboto/Roboto-Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #f5f5f7;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; 
+}
+
+.topbar {
+    font-family: "HermitRegular", serif;
+    background-color: #ffffff;
+    color: #1d1d1f;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 24px;
+    border-bottom: 2px solid #1d1d1f;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.site-logo {
+    height: 48px;
+    width: 48px;
+    object-fit: contain;
+}
+
+.site-title {
+    font-size: 28px;
+    letter-spacing: 2px;
+}
+
+.metadata {
+    font-size: 14px;
+    padding: 0 16px;
+}
+
+.main-wrapper {
+    background-color: #f5f5f7;
+    color: #1d1d1f;
+    display: flex;
+    gap: 16px;
+    flex-grow: 1;
+    overflow: hidden;
+    margin: 16px;
+}
+
+.content-wrapper {
+    width: 70%;
+    background: #ffffff;
+    color: #1d1d1f;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+}
+
+
+.right-sidebar {
+    width: 30%;
+    background-color: #f5f5f7;
+    display: flex;
+    gap: 16px;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.right-topbar {
+    background-color: #ffffff;
+    color: #1d1d1f;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    flex: 8;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+
+.profile-image {
+    margin-top: auto;
+    align-self: center;
+}
+.right-bottombar {
+    background-color: #ffffff;
+    color: #1d1d1f;
+    border: 1px solid rgba(0,0,0,0.08);
+    border-radius: 8px;
+    flex: 2;
+    overflow: hidden;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+}
+
+.heading {
+    font-family: "HermitRegular", serif;
+    font-size: 24px;
+    padding-bottom: 16px;
+}
+
+.feed-item {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background-color: #ffffff;
+    color: #1d1d1f;
+    border: 1px solid rgba(0,0,0,0.04);
+    border-radius: 8px;
+    /* Kept your excellent multi-layer shadow */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05),
+                0 4px 12px rgba(0,0,0,0.03);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.feed-item:hover {
+    background-color: #f9f9fb;
+}
+
+.feed-top {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 16px 4px 16px;
+}
+
+.feed-title {
+    font-family: "HermitBold", sans-serif;
+    font-size: 16px;
+}
+
+.feed-time {
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 14px;
+    color: #52525b;
+}
+
+.feed-desc {
+    padding: 0 16px 16px 16px;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #52525b;
+    font-family: "Roboto-Regular", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.right-bottombar .buttons a {
+    display: inline-block;
+    text-decoration: none;
+    border: 2px;
+    border-radius: 5px;
+    font-family: "HermitRegular", "Roboto-Regular", sans-serif;
+    font-size: 16px;
+    margin: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    color: #ffffff;
+}
+
+
+.back-button {
+    text-decoration: none;
+    color: inherit;
+    font-family: "HermitBold", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    padding: 8px 0;
+}
+
+.back-button:hover {
+    text-decoration: underline;
+}
+
+
+/* --- Firefox --- */
+.content-wrapper, .about, .buttons {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    transition: scrollbar-color 0.3s ease;
+}
+
+.content-wrapper:hover, .about:hover, .buttons:hover {
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+/* --- CHROME, SAFARI, EDGE (WEBKIT) --- */
+
+.content-wrapper::-webkit-scrollbar,
+.right-topbar::-webkit-scrollbar,
+.right-bottombar::-webkit-scrollbar {
+    width: 6px; 
+}
+
+.content-wrapper::-webkit-scrollbar-track,
+.right-topbar::-webkit-scrollbar-track,
+.right-bottombar::-webkit-scrollbar-track {
+    background: transparent; 
+}
+
+.content-wrapper::-webkit-scrollbar-thumb,
+.right-topbar::-webkit-scrollbar-thumb,
+.right-bottombar::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Invisible by default */
+    border-radius: 8px; /* Smooth rounded edges */
+}
+
+.content-wrapper:hover::-webkit-scrollbar-thumb,
+.right-topbar:hover::-webkit-scrollbar-thumb,
+.right-bottombar:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2); /* A subtle grey thumb */
+}
+
+.content-wrapper::-webkit-scrollbar-thumb:active,
+.right-topbar::-webkit-scrollbar-thumb:active,
+.right-bottombar::-webkit-scrollbar-thumb:active {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+@media (max-width: 768px) {
+    /* 1. Release the scroll trap */
+    body {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto; /* Let the whole page scroll on mobile */
+    }
+
+    /* 2. Stack the main layout vertically */
+    .main-wrapper {
+        flex-direction: column; /* Changes from row to column */
+        margin: 8px; /* Tighter margins to save precious screen real estate */
+        height: auto; 
+        overflow: visible; 
+    }
+
+    /* 3. Expand columns to full width */
+    .content-wrapper {
+        width: 100%;
+        overflow: visible; /* Disable independent scrolling */
+        /* Optional: limit max-height if you don't want feeds to be endlessly long before reaching "about" */
+    }
+
+    .right-sidebar {
+        width: 100%;
+        /* The sidebar is already a flex column, so #about and #contact will naturally stack! */
+    }
+
+    .right-topbar, 
+    .right-bottombar {
+        overflow: visible; /* Disable independent scrolling */
+    }
+
+    /* 4. Adjust the Topbar for small screens */
+    .topbar {
+        flex-direction: column; /* Stack logo and date */
+        align-items: flex-start;
+        gap: 8px;
+        padding: 16px;
+    }
+
+    .metadata {
+        padding: 0;
+        font-size: 12px;
+    }
+}
