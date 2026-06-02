@@ -1,0 +1,33 @@
+{
+    "username": "",
+    "last_updated": "",
+    "profile_image_url": "",
+    "profile_image_desc": "",
+    "contact_links": [
+	{
+	    "name": "",
+	    "url": "",
+	    "bg_color": "",
+	    "fg_color": ""
+	},
+	{
+	    "name": "",
+	    "url": "",
+	    "bg_color": "",
+	    "fg_color": ""
+	},
+	{
+	    "name": "",
+	    "url": "",
+	    "bg_color": "",
+	    "fg_color": ""
+	},
+	{
+	    "name": "",
+	    "url": "",
+	    "bg_color": "",
+	    "fg_color": ""
+	}],
+    "about_url": "./user-assets/about.html"
+}
+

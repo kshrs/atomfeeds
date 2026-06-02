@@ -155,7 +155,6 @@ body {
     color: #1d1d1f;
     border: 1px solid rgba(0,0,0,0.04);
     border-radius: 8px;
-    /* Kept your excellent multi-layer shadow */
     box-shadow: 0 1px 3px rgba(0,0,0,0.05),
                 0 4px 12px rgba(0,0,0,0.03);
     cursor: pointer;
@@ -173,7 +172,7 @@ body {
 }
 
 .feed-title {
-    font-family: "HermitBold", sans-serif;
+    font-family: "Roboto-SemiBold", sans-serif;
     font-size: 16px;
 }
 
@@ -271,14 +270,13 @@ body {
 
 
 @media (max-width: 768px) {
-    /* 1. Release the scroll trap */
+
     body {
         height: auto;
         min-height: 100vh;
-        overflow-y: auto; /* Let the whole page scroll on mobile */
+        overflow-y: auto;
     }
 
-    /* 2. Stack the main layout vertically */
     .main-wrapper {
         flex-direction: column; /* Changes from row to column */
         margin: 8px; /* Tighter margins to save precious screen real estate */
@@ -286,16 +284,14 @@ body {
         overflow: visible; 
     }
 
-    /* 3. Expand columns to full width */
     .content-wrapper {
         width: 100%;
         overflow: visible; /* Disable independent scrolling */
-        /* Optional: limit max-height if you don't want feeds to be endlessly long before reaching "about" */
+	max-height: 60vh;
     }
 
     .right-sidebar {
         width: 100%;
-        /* The sidebar is already a flex column, so #about and #contact will naturally stack! */
     }
 
     .right-topbar, 
@@ -303,7 +299,6 @@ body {
         overflow: visible; /* Disable independent scrolling */
     }
 
-    /* 4. Adjust the Topbar for small screens */
     .topbar {
         flex-direction: column; /* Stack logo and date */
         align-items: flex-start;

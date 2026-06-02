@@ -7,16 +7,20 @@ async function loadFeeds() {
 
 	let contentBuffer = `<span class="heading">#feeds</span>`
 
+	if (Array.isArray(feeds) && feeds.length === 0) {
+	    contentBuffer += `<a class="feed-item" href="#"><div class="feed-top"><h2 class="feed-title">feeds.json file is empty</h2></div></a>`;
+	} else {
 	
-	feeds.forEach(feed => {
-	    contentBuffer += `<a class="feed-item" href="${feed.url}">
+	    feeds.forEach(feed => {
+		contentBuffer += `<a class="feed-item" href="${feed.url}">
 <div class="feed-top">
 <h2 class="feed-title">${feed.title}</h2>
 <span class="feed-time">${feed.date}</span>
 </div>
 <p class="feed-desc">${feed.desc}</p>
 </a>`;
-	});
+	    });
+	}
 	wrapper.innerHTML = contentBuffer;
     } catch (error) {
 	console.error("Error loading feeds:", error);

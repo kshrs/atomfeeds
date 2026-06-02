@@ -1,8 +1,43 @@
-<!DOCTYPE html>
 <html>
     <head>
-	<meta http-equiv="refresh" content="0; url=./atomfeeds/index.html">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>atomfeeds</title>
+	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="icon" type="image/png" href="./assets/logo.png">
+	<link rel="stylesheet" href="./styles/generic.css">
     </head>
     <body>
+	<div class="topbar">
+	    <div class="brand">
+		<img src="./assets/logo.svg" class="site-logo" />
+		<span class="site-title">atomfeeds/kshrs</span>
+	    </div>
+	    <div class="metadata" id="metadata">
+	    </div>
+	</div>
+	
+	<div class="main-wrapper">
+	    
+	    <div class="content-wrapper">
+		<span class="heading">#feeds</span>
+	    </div>
+	    <div class="right-sidebar">
+		<div class="right-topbar" id="about">
+		    <span class="heading">#about</span>
+		    <div class="about" id="about"></div>
+		    <div class="profile-image" id="profile-image">
+		    </div>
+		</div>
+		
+		<div class="right-bottombar">
+		    <span class="heading">#contact</span>
+		    <div class="buttons" id="buttons">
+		    </div>
+		</div>
+	    </div>
+	</div>
+
+	<script src="./app.js"></script>
     </body>
 </html>

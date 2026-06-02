@@ -19,9 +19,9 @@
     /* Typography: Body Text */
     p {
 	font-family: "Roboto-Regular", sans-serif;
-	color: #52525b; /* Using the medium-dark grey to reduce eye strain */
+	color: #52525b;
 	font-size: 16px;
-	line-height: 1.6; /* 160% line height for readable prose */
+	line-height: 1.6;
 	margin-bottom: 24px;
     }
 
@@ -36,7 +36,7 @@
     }
 
     a:hover {
-	color: #f37726; /* A sharp, recognizable accent color for interactive states */
+	color: #f37726; 
 	text-decoration-color: #f37726;
     }
 
@@ -51,10 +51,10 @@
     }
 
     li {
-	margin-bottom: 8px; /* 8-point grid for list spacing */
+	margin-bottom: 8px;
     }
 
-    /* Inline Code & Code Blocks (The Technical Vibe) */
+    /* Inline Code & Code Blocks */
     code {
 	font-family: "HermitRegular", monospace;
 	font-size: 14px;
@@ -69,7 +69,7 @@
 	background-color: #f5f5f7;
 	padding: 16px;
 	border-radius: 8px;
-	border: 1px solid rgba(0,0,0,0.08); /* Matches your flat container style */
+	border: 1px solid rgba(0,0,0,0.08);
 	overflow-x: auto;
 	margin-top: 24px;
 	margin-bottom: 24px;
@@ -82,14 +82,14 @@
 	font-size: 14px;
     }
 
-    /* Blockquotes for Emphasis */
+    /* Blockquotes */
     blockquote {
 	border-left: 4px solid #1d1d1f;
 	padding-left: 16px;
 	margin: 24px 0;
 	font-style: italic;
 	color: #1d1d1f;
-	background-color: #f9f9fb; /* Extremely subtle highlight */
+	background-color: #f9f9fb;
 	padding: 16px;
 	border-radius: 0 8px 8px 0;
     }
@@ -105,8 +105,8 @@
 	max-width: 100%;
 	height: auto;
 	display: block;
-	border-radius: 8px; /* Matches the border radius of your cards */
-	border: 1px solid rgba(0,0,0,0.08); /* Keeps the crisp, flat UI aesthetic */
+	border-radius: 8px;
+	border: 1px solid rgba(0,0,0,0.08);
 	margin: 8px 0;
     }
 
@@ -122,21 +122,21 @@
 	display: block;
 	border-radius: 8px;
 	border: 1px solid rgba(0,0,0,0.08);
-	margin: 0; /* Strip margin so the wrapper controls spacing */
+	margin: 0;
     }
 
     /* The Tooltip UI */
     .image-tooltip-wrapper::after {
-	content: attr(data-alt); /* Grabs the text from the HTML attribute */
+	content: attr(data-alt);
 	position: absolute;
 	bottom: 16px;
 	left: 50%;
 	transform: translateX(-50%);
 	
-	/* Styling the tooltip to match your technical aesthetic */
-	background-color: rgba(29, 29, 31, 0.95); /* Nearly solid #1d1d1f */
+	/* Styling */
+	background-color: rgba(29, 29, 31, 0.95);
 	color: #ffffff;
-	font-family: "HermitRegular", monospace; /* Using mono for technical tooltips looks great */
+	font-family: "HermitRegular", monospace;
 	font-size: 12px;
 	padding: 8px 12px;
 	border-radius: 4px;
@@ -144,43 +144,18 @@
 	
 	/* Animation & Interaction */
 	opacity: 0;
-	pointer-events: none; /* Prevents the tooltip from flickering if the mouse hits it */
+	pointer-events: none;
 	transition: opacity 0.2s ease, transform 0.2s ease;
     }
 
     /* Hover State */
     .image-tooltip-wrapper:hover::after {
 	opacity: 1;
-	transform: translate(-50%, -4px); /* Slight upward float effect */
+	transform: translate(-50%, -4px);
     }
     
-    /* Replace the previous img generic tag with this structure */
-    figure {
-	margin: 32px 0;
-	display: flex;
-	flex-direction: column;
-	align-items: center; /* Centers the caption under the image */
-    }
 
-    figure img {
-	max-width: 100%;
-	height: auto;
-	display: block;
-	border-radius: 8px;
-	border: 1px solid rgba(0,0,0,0.08);
-	margin-bottom: 12px; /* 8-point grid spacing for the caption */
-    }
-
-    figcaption {
-	font-family: "Roboto-Regular", sans-serif;
-	color: #52525b; /* Using your medium-grey for secondary info */
-	font-size: 14px;
-	text-align: center;
-	max-width: 80%; /* Keeps long captions from stretching too wide */
-	line-height: 1.5;
-    }
-
-    /* Horizontal Rule (Separators) */
+    /* Horizontal Ruler */
     hr {
 	border: none;
 	border-top: 1px solid rgba(0,0,0,0.08);
