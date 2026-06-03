@@ -9,14 +9,14 @@ atomfeeds lets you manage posts, profile metadata, and contact links locally thr
 ## Screenshots
 
 ### Viewer View
-![Home Viewer](./screenshots/atomfeeds_home_viewer.jpg)
-![Blog Post View 1](./screenshots/atomfeeds_blogs_viewer_1.jpg)
-![Blog Post View 2](./screenshots/atomfeeds_blogs_viewer_2.jpg)
+![Home Viewer](./screenshots/atomfeeds_home_viewer.png)
+![Blog Post View 1](./screenshots/atomfeeds_blogs_viewer_1.png)
+![Blog Post View 2](./screenshots/atomfeeds_blogs_viewer_2.png)
 
 ### Editor View
-![Home Editor](./screenshots/atomfeeds_home_editor.jpg)
-![Feed Editor Modal](./screenshots/atomfeeds_feed_editor.jpg)
-![Contacts Editor Modal](./screenshots/atomfeeds_contacts_editor.jpg)
+![Home Editor](./screenshots/atomfeeds_home_editor.png)
+![Feed Editor Modal](./screenshots/atomfeeds_feed_editor.png)
+![Contacts Editor Modal](./screenshots/atomfeeds_contacts_editor.png)
 
 ## Architecture
 
