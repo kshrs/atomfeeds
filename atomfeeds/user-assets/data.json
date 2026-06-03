@@ -1,0 +1,33 @@
+{
+    "username": "kshrs",
+    "last_updated": "03 Jun 2026",
+    "profile_image_url": "./user-assets/profile_pic.jpg?v=1780490476725",
+    "profile_image_desc": "Profile Picture",
+    "contact_links": [
+        {
+            "name": "X.com",
+            "url": "https://x.com/kshrs_atom",
+            "bg_color": "#000000",
+            "fg_color": "#ffffff"
+        },
+        {
+            "name": "mail:kishorjsk2006@gmail.com",
+            "url": "mailto:kishorjsk2006@gmail.com",
+            "bg_color": "#c5221f",
+            "fg_color": "#ffffff"
+        },
+        {
+            "name": "GitHub",
+            "url": "https://github.com/kshrs",
+            "bg_color": "#000000",
+            "fg_color": "#ffffff"
+        },
+        {
+            "name": "LinkedIn",
+            "url": "https://linkedin.com/in/kshrs",
+            "bg_color": "#0077b5",
+            "fg_color": "#ffffff"
+        }
+    ],
+    "about_url": "./user-assets/about.html"
+}

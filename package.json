@@ -1,0 +1,24 @@
+{
+  "name": "atomfeeds",
+  "version": "1.0.0",
+  "description": "A simple and straightforward blog editor for local publishment with fixed styling and structure",
+  "homepage": "https://github.com/kshrs/atomfeeds#readme",
+  "bugs": {
+    "url": "https://github.com/kshrs/atomfeeds/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kshrs/atomfeeds.git"
+  },
+  "license": "MIT",
+  "author": "kshrs",
+  "type": "nodejs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

@@ -1,43 +1,132 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>atomfeeds</title>
-	<link rel="stylesheet" href="./styles/style.css">
-	<link rel="icon" type="image/png" href="./assets/logo.png">
-	<link rel="stylesheet" href="./styles/generic.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>atomfeeds</title>
+        
+        <link rel="stylesheet" href="./atomfeeds/styles/style.css">
+        <link rel="stylesheet" href="./atomfeeds/styles/generic.css">
+        <link rel="stylesheet" href="./editor.css">
+        <link rel="icon" type="image/png" href="./atomfeeds/assets/logo.png">
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/easymde/dist/easymde.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     </head>
     <body>
-	<div class="topbar">
-	    <div class="brand">
-		<img src="./assets/logo.svg" class="site-logo" />
-		<span class="site-title">atomfeeds/kshrs</span>
-	    </div>
-	    <div class="metadata" id="metadata">
-	    </div>
-	</div>
-	
-	<div class="main-wrapper">
-	    
-	    <div class="content-wrapper">
-		<span class="heading">#feeds</span>
-	    </div>
-	    <div class="right-sidebar">
-		<div class="right-topbar" id="about">
-		    <span class="heading">#about</span>
-		    <div class="about" id="about"></div>
-		    <div class="profile-image" id="profile-image">
-		    </div>
-		</div>
-		
-		<div class="right-bottombar">
-		    <span class="heading">#contact</span>
-		    <div class="buttons" id="buttons">
-		    </div>
-		</div>
-	    </div>
-	</div>
+        <div class="topbar">
+            <div class="brand">
+              <img src="./atomfeeds/assets/logo.svg" class="site-logo" alt="Site Logo" />
+              <div class="site-title" id="site-title"></div>
+              
+              <div class="site-title-editor" style="display: inline-flex; align-items: center; gap: 12px; cursor: pointer;">
+                  <button class="icon-btn edit-btn">
+                      <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                      Edit
+                  </button>
+              </div>
+            </div>
+            <div class="metadata" id="metadata"></div>
+        </div>
+        
+        <div class="main-wrapper">
+            <div class="content-wrapper">
+                <span class="heading">#feeds</span>
+            </div>
+            
+            <div class="right-sidebar">
+                
+                <div class="right-topbar" id="about">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="heading">#about</span>
+                        <button class="icon-btn edit-btn" id="about-edit-btn">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                            Edit
+                        </button>
+                    </div>
+                    
+                    <div class="about" id="about-content"></div>
+                    
+                    <div style="margin-top: 20px;">
+                        <div class="profile-image" id="profile-image"></div>
+                        <button class="icon-btn edit-btn" id="profile-edit-btn" style="margin-top: 10px;">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                            <span id="profile-btn-text">Add/Edit Picture</span>
+                        </button>
+                        <input type="file" id="profile-upload-input" accept="image/png, image/jpeg" style="display: none;">
+                    </div>
+                </div>
+                
+                <div class="right-bottombar">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span class="heading">#contact</span>
+                        <button class="icon-btn edit-btn" id="contact-edit-btn">
+                            <svg viewBox="0 0 24 24" width="16" height="16"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                            Edit
+                        </button>
+                    </div>
+                    <div class="buttons" id="buttons"></div>
+                </div>
+            </div>
+        </div>
 
-	<script src="./app.js"></script>
+        <div id="editor-modal" class="editor-modal hidden">
+            <div class="editor-modal-content">
+                <div class="editor-modal-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; border-bottom: 1px solid #1d1d1f; padding-bottom: 12px; margin-bottom: 16px;">
+                    <div class="header-left" style="display: flex; gap: 8px;">
+                        <button id="modal-exit-btn" class="icon-btn cancel-btn">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                            Exit
+                        </button>
+                        <button id="modal-save-btn" class="icon-btn save-btn">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Save
+                        </button>
+			<button id="modal-delete-btn" class="icon-btn cancel-btn">
+			  <svg viewBox="0 0 24 24"><path d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"/></svg>
+			  Delete
+			</button>
+                    </div>
+                    <div class="header-right">
+                        <div class="toggle-slider editor-toggle">
+                            <button type="button" id="toggle-text-btn" class="toggle-btn active">Text</button>
+                            <button type="button" id="toggle-preview-btn" class="toggle-btn">Preview</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="editor-modal-body" style="display: flex; flex-direction: column;">
+                    <div id="new-post-meta" style="display: none; flex-direction: column; gap: 12px; margin-bottom: 16px;">
+                        <input type="text" id="new-post-title" class="contact-input" placeholder="Post Title" style="font-size: 18px; font-weight: bold; padding: 12px;">
+                        <input type="text" id="new-post-desc" class="contact-input" placeholder="Short Description (Optional)" style="padding: 10px;">
+                    </div>
+                    <textarea id="markdown-editor"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div id="contact-modal" class="editor-modal hidden">
+            <div class="editor-modal-content">
+                <div class="editor-modal-header" style="display: flex; justify-content: space-between; align-items: center; width: 100%; border-bottom: 1px solid #1d1d1f; padding-bottom: 12px; margin-bottom: 16px;">
+                    <div class="header-left" style="display: flex; gap: 8px;">
+                        <button id="contact-exit-btn" class="icon-btn cancel-btn">
+                            <svg viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+                            Exit
+                        </button>
+                        <button id="contact-save-btn" class="icon-btn save-btn">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                            Save
+                        </button>
+                    </div>
+                    <span class="heading" style="margin:0;">Edit Contacts</span>
+                </div>
+                
+                <div class="editor-modal-body" id="contact-rows-container" style="display: flex; flex-direction: column; gap: 16px;"></div>
+            </div>
+        </div>
+
+        <script src="./atomfeeds/app.js"></script>
+        <script src="./editor.js"></script>
     </body>
 </html>
